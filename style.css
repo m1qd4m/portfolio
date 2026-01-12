@@ -1,0 +1,468 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    background-color: #ffffff;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.image-wrapper {
+    position: fixed;
+    width: 95vh;
+    height: 100vh;
+}
+
+.profile-pic {
+    width: 60vh;
+    height: 100%;
+   
+}
+
+.content {
+    margin-left: 5%;
+    height: auto; /* Changed from 100vh to auto to allow content to flow naturally */
+    min-height: 100vh; /* Ensures minimum height of viewport */
+    display: flex;
+    flex-direction: column;
+    padding-left: 30%;
+    justify-content: flex-start;
+    align-items: center; /* Changed from flex-start to center */
+    padding-top: 10%;
+    width: 100%; /* Ensures content doesn't overflow */
+    box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+h1 {
+    font-family: 'Intel One Mono', monospace;
+    cursor:pointer;
+    font-size: 3.5em;
+    font-weight: 50;
+    color: #333;
+    margin: 0;
+    padding-top: 5%;
+    text-align: center;
+    width: 100%; /* Ensures proper width */
+}
+
+h3 {
+    font-family: 'Intel One Mono', monospace;
+    font-size: 0.9em;
+    padding-left: 0; /* Removed the left padding */
+    font-weight: 200;
+    color: #555;
+    width: 100%;
+    text-align: center; /* Center the text */
+    margin-top: 10px; /* Add some space below h1 */
+}
+
+button {
+    margin-top: 30px; /* Increased margin for better spacing */
+    padding: 10px 30px;
+    font-size: 1em;
+    text-align: center;
+    font-family: 'Intel One Mono', monospace;
+    font-weight: 200;
+    color: #585656;
+    background-color: #f1f1f1;
+    border-color: #fafafa;
+    border-radius: 10px; /* Added border radius */
+    border-style: solid;
+    cursor: pointer;
+    width: 200px;
+    margin-left: 0; /* Removed left margin */
+    transition: all 0.3s ease;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding-left: 10%;
+    flex-wrap: wrap;
+    width: 90%; /* Reduced from 100% to prevent overflow */
+    max-width: 900px; 
+    justify-content: flex-start;
+    align-self: flex-start; /* Align gallery to the left */
+}
+
+.gallery-img {
+    width: 280px; 
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.content > * {
+    pointer-events: auto; /* Ensures only actual elements are clickable */
+}
+
+/* ========== TWO COLUMN LAYOUT STYLES ========== */
+
+/* Two Column Layout Styles */
+.two-column-section {
+    display: block;
+   /* gap: 40px; /* Space between columns */
+    margin-top: 30px;
+    padding-left: 10%;
+    padding-right: 5%;
+    width: 85%;
+    max-width: 1200px; /* Increased max-width for two columns */
+    align-self: flex-start; /* Align to the left */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.column {
+    flex: 1; 
+    min-width: 300px; 
+}
+
+/* Column headings */
+.two-column-section h2 {
+    font-family: 'Intel One Mono', monospace;
+    font-size: 1.5em;
+    font-weight: 200;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: left;
+    padding-left: 0;
+}
+
+/* About Me  */
+#about-me {
+    width: 100%; 
+    max-width: none; 
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Intel One Mono', monospace;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background-color: #f8f8f8; 
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+#about-me:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Education */
+#education {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Intel One Mono', monospace;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background-color: #f8f8f8; /* Matching background */
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    width:70%;
+}
+
+.education-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.education-item:last-child {
+    border-bottom: none;
+}
+
+.education-item h3 {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 5px;
+    padding-left: 0;
+    text-align: left;
+}
+
+.education-item .institution {
+    font-weight: 500;
+    color: #666;
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+.education-item .duration {
+    font-style: italic;
+    color: #888;
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.education-item .description {
+    margin-top: 10px;
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* Response*/
+@media (max-width: 900px) {
+    .two-column-section {
+        flex-direction: column; 
+        gap: 30px;
+    }
+    
+    .column {
+        width: 100%;
+    }
+    
+    .content {
+        padding-left: 25%;
+    }
+    
+    .image-gallery {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .two-column-section {
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 95%;
+    }
+    
+    .content {
+        padding-left: 20%;
+        padding-top: 15%;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    .gallery-img {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .image-gallery {
+        justify-content: center;
+        padding-left: 0;
+    }
+}
+
+.contact{
+    width:90%;
+    margin:50px auto;
+    padding-left: 10%;
+    font-family: 'Intel One Mono', monospace;
+}
+.contact h2{
+    
+    font-family: 'Intel One Mono', monospace;
+    font-size: 1em;
+    opacity: 0.8;
+    font-weight: 400;
+    color: #333;
+}
+.contact-me input,contact-me textarea {
+    background-color:rgb(240, 240, 240);
+    padding: 12px 15px; /* Yeh change karein - top/bottom 12px, left/right 15px */
+
+    width:90%;
+    padding-bottom:10px;
+    border-color: #fffbfb;
+    font-weight:100;
+    color:#2c2c2c;
+    border-style: hidden;
+   margin-bottom:20px;
+   border-radius:5px;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    outline: none;
+    cursor: text ;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.contact-me input:focus {
+    border-color: #a0a0a0; /* Light gray border on focus */
+    background-color: #f8f8f8; /* Optional: Thoda sa lighter background */
+    box-shadow: 0 0 0 2px rgba(160, 160, 160, 0.1); /* Very subtle shadow */
+}
+.contact-me input:hover,
+.contact-me textarea:hover {
+    cursor: text; /* Ensure text cursor on hover */
+}
+/* Submit button with icon */
+.submit-btn {
+    margin-top: 10px;
+    padding: 12px 35px 12px 25px; /* More left padding for icon */
+    font-family: 'Intel One Mono', monospace;
+    font-weight: 400;
+    font-size: 1em;
+    background-color: #c8c8c8;
+    color: rgb(19, 17, 17);
+    opacity: 0.8;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    position: relative;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    color: white;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(241, 237, 237, 0.15);
+}
+
+/* Icon styling */
+.submit-btn i, 
+.submit-btn svg {
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+/* Paper plane icon specific styles */
+.paper-plane-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* Add animation on hover */
+.submit-btn:hover i,
+.submit-btn:hover svg {
+    transform: translateX(5px) rotate(45deg);
+}
+
+/* For the Unicode symbol version */
+.submit-btn span.plane-symbol {
+    font-size: 1.2em;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-right: 8px;
+}
+
+.submit-btn:hover span.plane-symbol {
+    transform: translateX(5px) rotate(45deg);
+}
+/* ========== NAVBAR STYLES ========== */
+
+nav {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 100;
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    font-family: 'Intel One Mono', monospace;
+    font-size: 0.9em;
+    font-weight: 300;
+    color: #555;
+    text-decoration: none;
+    padding: 8px 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: #333;
+}
+
+nav a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 5px;
+    left: 0;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+nav a:hover:after {
+    width: 100%;
+}
+
+/* Blog link styling (external link) */
+nav a[href*="blogspot"] {
+    font-weight: 400;
+    color: #444;
+}
+
+nav a[href*="blogspot"]:hover {
+    color: #222;
+}
+
+/* Responsive adjustments for navbar */
+@media (max-width: 900px) {
+    nav {
+        top: 20px;
+        right: 30px;
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+    
+    nav a {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        top: 15px;
+        right: 20px;
+    }
+    
+    nav ul {
+        gap: 15px;
+    }
+    
+    nav a {
+        font-size: 0.8em;
+        padding: 5px 3px;
+    }
+}
