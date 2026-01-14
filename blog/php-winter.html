@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Development - Miqdaam Shah</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+    </style>
+</head>
+<body>
+    <div class="image-wrapper">
+        <img src="../pfp.jpg" class="profile-pic">
+    </div>
+
+    <div class="content">
+        <nav>  
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact-me">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="../index.html#blog" class="back-to-blog">← Back to Blog</a>
+
+        <div class="single-post">
+            <header class="post-header">
+                <h1 class="post-title">Backend Development with PHP: Winter 2026</h1>
+                <div class="post-meta">
+                    <span>Winter 2026</span>
+                    <span>•</span>
+                    <span>3 min read</span>
+                </div>
+            </header>
+
+            <article class="post-content">
+                <img src="php-dashboard.png" alt="PHP Dashboard" class="post-featured-img">
+                
+                <h2>💻 Why PHP?</h2>
+                <p>After mastering frontend development, I wanted to learn server-side programming. PHP powers 78% of all websites, making it essential for full-stack development.</p>
+                
+                <h2>📚 Core Concepts Learned</h2>
+                
+                <h3>1. PHP Syntax Basics</h3>
+                <pre><code>&lt;?php
+// Variables and data types
+$name = "Miqdaam";
+$age = 21;
+$isStudent = true;
+
+// Functions
+function greet($name) {
+    return "Hello, " . $name . "!";
+}
+
+echo greet("World");
+?&gt;</code></pre>
+                
+                <h3>2. Database Connectivity</h3>
+                <pre><code>// MySQL connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "myDB";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Query execution
+$sql = "SELECT * FROM users";
+$result = $conn->query($sql);
+
+// Fetch data
+while($row = $result->fetch_assoc()) {
+    echo $row["username"];
+}</code></pre>
+                
+                <h3>3. Form Handling & Validation</h3>
+                <pre><code>if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    
+    // Validate email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Invalid email format";
+    } else {
+        // Process form data
+        saveToDatabase($email);
+    }
+}</code></pre>
+                
+                <h2>🔧 Key Skills Acquired</h2>
+                <ul>
+                    <li>PHP 8+ syntax and features</li>
+                    <li>MySQL database operations (CRUD)</li>
+                    <li>Form validation and security</li>
+                    <li>Session management and cookies</li>
+                    <li>File handling and uploads</li>
+                    <li>REST API development</li>
+                </ul>
+                
+                <blockquote>
+                    "PHP taught me how the web actually works behind the scenes."
+                </blockquote>
+                
+                <h2>🎯 Projects Built</h2>
+                <ol>
+                    <li><strong>User Registration System:</strong> Complete with login/logout and session management</li>
+                    <li><strong>Blog CMS:</strong> Create, read, update, delete blog posts</li>
+                    <li><strong>E-commerce Cart:</strong> Shopping cart with MySQL database</li>
+                    <li><strong>Contact Form:</strong> With email sending capabilities</li>
+                    <li><strong>Task Manager:</strong> AJAX-powered task management system</li>
+                </ol>
+                
+                <h2>🔐 Security Practices</h2>
+                <p>Learned essential security measures:</p>
+                <ul>
+                    <li>Prepared statements to prevent SQL injection</li>
+                    <li>Input validation and sanitization</li>
+                    <li>Password hashing with bcrypt</li>
+                    <li>Cross-Site Scripting (XSS) prevention</li>
+                    <li>CSRF token implementation</li>
+                </ul>
+                
+                <h2>🚀 Integration with Frontend</h2>
+                <p>Connected PHP backend with:</p>
+                <ul>
+                    <li>HTML/CSS for frontend presentation</li>
+                    <li>JavaScript for dynamic features</li>
+                    <li>AJAX for seamless user experience</li>
+                    <li>JSON for API responses</li>
+                </ul>
+                
+                <p>PHP completed my full-stack development toolkit, allowing me to build complete web applications from database to user interface.</p>
+            </article>
+
+            <div class="blog-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">Backend</span>
+                <span class="tag">Web Development</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Full-Stack</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

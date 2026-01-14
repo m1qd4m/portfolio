@@ -1,0 +1,986 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    background-color: #ffffff;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.image-wrapper {
+    position: fixed;
+    width: 95vh;
+    height: 100vh;
+}
+
+.profile-pic {
+    width: 60vh;
+    height: 100%;
+   
+}
+
+.content {
+    margin-left: 5%;
+    height: auto; /* Changed from 100vh to auto to allow content to flow naturally */
+    min-height: 100vh; /* Ensures minimum height of viewport */
+    display: flex;
+    flex-direction: column;
+    padding-left: 30%;
+    justify-content: flex-start;
+    align-items: center; /* Changed from flex-start to center */
+    padding-top: 10%;
+    width: 100%; /* Ensures content doesn't overflow */
+    box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+h1 {
+    font-family: 'Intel One Mono', monospace;
+    cursor: text;
+    font-size: 3.5em;
+    font-weight: 50;
+    color: #333;
+    margin: 0;
+    padding-top: 5%;
+    text-align: center;
+    width: 100%; /* Ensures proper width */
+}
+
+h3 {
+    font-family: 'Intel One Mono', monospace;
+    font-size: 0.9em;
+    padding-left: 0; /* Removed the left padding */
+    font-weight: 200;
+    color: #555;
+    
+    width: 100%;
+    text-align: center; /* Center the text */
+    margin-top: 10px; /* Add some space below h1 */
+}
+
+button {
+    margin-top: 30px; /* Increased margin for better spacing */
+    padding: 10px 30px;
+    font-size: 1em;
+    text-align: center;
+    font-family: 'Intel One Mono', monospace;
+    font-weight: 200;
+    color: #585656;
+    background-color: #f1f1f1;
+    border-color: #fafafa;
+    border-radius: 10px; /* Added border radius */
+    border-style: solid;
+    cursor: pointer;
+    width: 200px;
+    margin-left: 0; /* Removed left margin */
+    transition: all 0.3s ease;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding-left: 10%;
+    flex-wrap: wrap;
+    width: 90%; /* Reduced from 100% to prevent overflow */
+    max-width: 900px; 
+    justify-content: flex-start;
+    align-self: flex-start; /* Align gallery to the left */
+}
+.image-gallery h3 {
+    width: 100%;
+    text-align: left;
+    padding-left: 0;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    font-weight: 300;
+    color: #444;
+}
+
+.gallery-img {
+    width: 280px; 
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.content > * {
+    pointer-events: auto; /* Ensures only actual elements are clickable */
+}
+
+/* ========== TWO COLUMN LAYOUT STYLES ========== */
+
+/* Two Column Layout Styles */
+.two-column-section {
+    display: block;
+   /* gap: 40px; /* Space between columns */
+    margin-top: 30px;
+    padding-left: 10%;
+    padding-right: 5%;
+    width: 85%;
+    max-width: 1200px; /* Increased max-width for two columns */
+    align-self: flex-start; /* Align to the left */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.column {
+    flex: 1; 
+    min-width: 300px; 
+}
+
+/* Column headings */
+.two-column-section h2 {
+    font-family: 'Intel One Mono', monospace;
+    font-size: 1.5em;
+    font-weight: 200;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: left;
+    padding-left: 0;
+}
+
+/* About Me  */
+#about-me {
+    width: 100%; 
+    max-width: none; 
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Intel One Mono', monospace;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background-color: #f8f8f8; 
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+#about-me:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Education */
+#education {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Intel One Mono', monospace;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background-color: #f8f8f8; /* Matching background */
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    width:70%;
+}
+#education:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.04);
+    cursor: pointer;
+}
+.education-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.education-item:last-child {
+    border-bottom: none;
+}
+
+.education-item h3 {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 5px;
+    padding-left: 0;
+    text-align: left;
+}
+
+.education-item .institution {
+    font-weight: 500;
+    color: #666;
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+.education-item .duration {
+    font-style: italic;
+    color: #888;
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.education-item .description {
+    margin-top: 10px;
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* Response*/
+@media (max-width: 900px) {
+    .two-column-section {
+        flex-direction: column; 
+        gap: 30px;
+    }
+    
+    .column {
+        width: 100%;
+    }
+    
+    .content {
+        padding-left: 25%;
+    }
+    
+    .image-gallery {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .two-column-section {
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 95%;
+    }
+    
+    .content {
+        padding-left: 20%;
+        padding-top: 15%;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    .gallery-img {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .image-gallery {
+        justify-content: center;
+        padding-left: 0;
+    }
+}
+
+.contact{
+    width:90%;
+    margin:50px auto;
+    padding-left: 10%;
+    font-family: 'Intel One Mono', monospace;
+}
+.contact h2{
+    
+    font-family: 'Intel One Mono', monospace;
+    font-size: 1em;
+    opacity: 0.8;
+    font-weight: 400;
+    color: #333;
+}
+.contact-me input,contact-me textarea {
+    background-color:rgb(240, 240, 240);
+    padding: 12px 15px; /* Yeh change karein - top/bottom 12px, left/right 15px */
+
+    width:90%;
+    padding-bottom:10px;
+    border-color: #fffbfb;
+    font-weight:100;
+    color:#2c2c2c;
+    border-style: hidden;
+   margin-bottom:20px;
+   border-radius:5px;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    outline: none;
+    cursor: text ;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.contact-me input:focus {
+    border-color: #a0a0a0; /* Light gray border on focus */
+    background-color: #f8f8f8; /* Optional: Thoda sa lighter background */
+    box-shadow: 0 0 0 2px rgba(160, 160, 160, 0.1); /* Very subtle shadow */
+}
+.contact-me input:hover,
+.contact-me textarea:hover {
+    cursor: text; /* Ensure text cursor on hover */
+}
+/* Submit button with icon */
+.submit-btn {
+    margin-top: 10px;
+    padding: 12px 35px 12px 25px; /* More left padding for icon */
+    font-family: 'Intel One Mono', monospace;
+    font-weight: 400;
+    font-size: 1em;
+    background-color: #c8c8c8;
+    color: rgb(19, 17, 17);
+    opacity: 0.8;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    position: relative;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    color: white;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(241, 237, 237, 0.15);
+}
+
+/* Icon styling */
+.submit-btn i, 
+.submit-btn svg {
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+/* Paper plane icon specific styles */
+.paper-plane-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* Add animation on hover */
+.submit-btn:hover i,
+.submit-btn:hover svg {
+    transform: translateX(5px) rotate(45deg);
+}
+
+/* For the Unicode symbol version */
+.submit-btn span.plane-symbol {
+    font-size: 1.2em;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-right: 8px;
+}
+
+.submit-btn:hover span.plane-symbol {
+    transform: translateX(5px) rotate(45deg);
+}
+/* ========== NAVBAR STYLES ========== */
+
+nav {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 100;
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    font-family: 'Intel One Mono', monospace;
+    font-size: 0.9em;
+    font-weight: 300;
+    color: #555;
+    text-decoration: none;
+    padding: 8px 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: #333;
+}
+
+nav a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 5px;
+    left: 0;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+nav a:hover:after {
+    width: 100%;
+}
+
+/* Blog link styling (external link) */
+nav a[href*="blogspot"] {
+    font-weight: 400;
+    color: #444;
+}
+
+nav a[href*="blogspot"]:hover {
+    color: #222;
+}
+
+/* Responsive adjustments for navbar */
+@media (max-width: 900px) {
+    nav {
+        top: 20px;
+        right: 30px;
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+    
+    nav a {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        top: 15px;
+        right: 20px;
+    }
+    
+    nav ul {
+        gap: 15px;
+    }
+    
+    nav a {
+        font-size: 0.8em;
+        padding: 5px 3px;
+    }
+}
+
+/* ===== BLOG SECTION STYLES ===== */
+.blog-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+    margin-top: 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.blog-section h2 {
+    text-align: center;
+    font-family: 'Cause', sans-serif;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.blog-section h2::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-post {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #eaeaea;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: #3498db;
+}
+
+.blog-post::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #3498db, #2ecc71);
+    border-radius: 5px 0 0 5px;
+}
+
+.blog-date {
+    font-family: 'Intel One Mono', monospace;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.blog-date::before {
+    content: '📅';
+    font-size: 0.9rem;
+}
+
+.blog-title {
+    font-family: 'Intel One Mono', monospace;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.blog-title a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-title a:hover {
+    color: #3498db;
+}
+
+.blog-excerpt {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    cursor:context-menu;
+    background: #e8f4fc;
+    color: #3498db;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: 'Intel One Mono', monospace;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Intel One Mono', monospace;
+    transition: gap 0.3s ease;
+}
+
+.read-more:hover {
+    gap: 12px;
+    color: #2980b9;
+}
+
+.view-all-blogs {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.view-all-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-family: 'Cause', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.view-all-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* ===== SINGLE BLOG POST PAGE STYLES ===== */
+.blog-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.back-to-blog {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    background: #f8f9fa;
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 25px;
+    margin: 30px 0;
+    font-family: 'Intel One Mono', monospace;
+    transition: all 0.3s ease;
+}
+
+.back-to-blog:hover {
+    background: #3498db;
+    color: white;
+    gap: 12px;
+}
+
+.single-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #eee;
+}
+
+.post-title {
+    font-family: 'Cause', sans-serif;
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #7f8c8d;
+    font-family: 'Intel One Mono', monospace;
+    margin-bottom: 30px;
+}
+
+.post-content {
+    font-family:  'Intel One Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.post-content h2 {
+  font-family:  'Intel One Mono', monospace;
+    color: #2c3e50;
+    margin: 40px 0 20px;
+    font-size: 1.8rem;
+}
+
+.post-content h3 {
+    font-family: 'Cause', sans-serif;
+    color: #020406;
+    margin: 30px 0 15px;
+    font-size: 1.4rem;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.post-content code {
+    cursor: pointer;
+    justify-items: left;
+    color: #f6f6f6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Intel One Mono', monospace;
+    font-size: 0.9rem;
+}
+
+.post-content pre {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 25px 0;
+    font-family: 'Intel One Mono', monospace;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #3498db;
+    padding-left: 20px;
+    margin: 25px 0;
+    color: #555;
+    font-style: italic;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.post-footer {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid #eee;
+}
+
+.share-post {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.share-btn {
+    padding: 10px 20px;
+    background: #f8f9fa;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    background: #3498db;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-section {
+        padding: 50px 15px;
+    }
+    
+    .blog-section h2 {
+        font-size: 2rem;
+    }
+    
+    .blog-posts {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .post-title {
+        font-size: 2rem;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+.cursor {
+    display:inline;
+    width: 1px;
+    cursor:text;
+    height: 1px;
+    background: var(--primary-cyan);
+    font-weight: 10px;
+   margin-right: 10px;
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+/* ===== THREE COLUMN LAYOUT STYLES ===== */
+.three-column-section {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    padding-left: 10%;
+    padding-right: 5%;
+    width: 85%;
+    max-width: 1400px;
+    align-self: flex-start;
+    flex-wrap: wrap;
+}
+
+.three-column-section .column {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+}
+
+/* ===== SKILLS SECTION STYLES ===== */
+.skills-section {
+    width: 85%;
+    margin: 40px auto 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    align-self: flex-start;
+    margin-left: 10%;
+    box-sizing: border-box;
+}
+
+.skills-section h2 {
+    font-family: 'Intel One Mono', monospace;
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skills-category {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease;
+}
+
+.skills-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.skills-category h3 {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 15px;
+    padding-left: 0;
+    text-align: left;
+    border-bottom: 2px solid #4299e1;
+    padding-bottom: 8px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-item {
+    background: #4299e1;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: 'Intel One Mono', monospace;
+    font-weight: 300;
+    transition: all 0.2s ease;
+    border: 1px solid #3182ce;
+}
+
+.skill-item:hover {
+    background: #3182ce;
+    cursor: context-menu;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(49, 130, 206, 0.2);
+}
+
+/* Different colors for different skill categories */
+.skills-category:nth-child(1) .skill-item {
+    background: #4299e1;
+    border-color: #3182ce;
+}
+
+.skills-category:nth-child(2) .skill-item {
+    background: #48bb78;
+    border-color: #38a169;
+}
+
+.skills-category:nth-child(3) .skill-item {
+    background: #ed8936;
+    border-color: #dd6b20;
+}
+
+.skills-category:nth-child(4) .skill-item {
+    background: #9f7aea;
+    border-color: #805ad5;
+}
+
+/* Responsive Design for Skills Section */
+@media (max-width: 900px) {
+    .skills-section {
+        width: 90%;
+        margin-left: 5%;
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-section {
+        width: 95%;
+        margin-left: 2.5%;
+        padding: 20px 15px;
+    }
+    
+    .skills-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .skills-list {
+        gap: 6px;
+    }
+    
+    .skill-item {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+}

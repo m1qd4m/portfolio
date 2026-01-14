@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Summer - Miqdaam Shah</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+    </style>
+</head>
+<body>
+    <div class="image-wrapper">
+        <img src="../pfp.jpg" class="profile-pic">
+    </div>
+
+    <div class="content">
+        <nav>  
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact-me">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="../index.html#blog" class="back-to-blog">← Back to Blog</a>
+
+        <div class="single-post">
+            <header class="post-header">
+                <h1 class="post-title">My Data Science Summer (2024)</h1>
+                <div class="post-meta">
+                    <span>Summer 2024</span>
+                    <span>•</span>
+                    <span>3 min read</span>
+                </div>
+            </header>
+
+            <article class="post-content">
+                <img src="data-viz.jpg" alt="Data Visualization" class="post-featured-img">
+                
+                <h2>🐍 Python for Data</h2>
+                <p>Summer 2024 was all about Python and data science. I explored:</p>
+                
+                <ul>
+                    <li><strong>NumPy:</strong> Numerical computing</li>
+                    <li><strong>pandas:</strong> Data manipulation</li>
+                    <li><strong>matplotlib:</strong> Data visualization</li>
+                    <li><strong>Jupyter Notebooks:</strong> Interactive coding</li>
+                </ul>
+                
+                <h2>📊 First Data Project</h2>
+                <p>Analyzed weather data to find patterns. My workflow:</p>
+                
+                <pre><code># Load data
+import pandas as pd
+data = pd.read_csv('weather.csv')
+
+# Clean data
+data = data.dropna()
+
+# Analyze
+avg_temp = data['temperature'].mean()
+
+# Visualize
+import matplotlib.pyplot as plt
+plt.plot(data['date'], data['temperature'])</code></pre>
+                
+                <h2>🎯 Key Skills Gained</h2>
+                <ol>
+                    <li>Data cleaning and preprocessing</li>
+                    <li>Basic statistical analysis</li>
+                    <li>Creating charts and graphs</li>
+                    <li>Working with real datasets</li>
+                </ol>
+                
+                <blockquote>
+                    "Data tells stories. Learning to listen was the real challenge."
+                </blockquote>
+                
+                <h2>🚀 Next Steps</h2>
+                <p>This summer sparked my interest in:</p>
+                <ul>
+                    <li>Machine Learning basics</li>
+                    <li>Big Data concepts</li>
+                    <li>Database management</li>
+                    <li>Statistical modeling</li>
+                </ul>
+            </article>
+
+            <div class="blog-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Data Science</span>
+                <span class="tag">Summer Learning</span>
+                <span class="tag">pandas</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

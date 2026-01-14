@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP in Java - Miqdaam Shah</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+    </style>
+</head>
+<body>
+    <div class="image-wrapper">
+        <img src="../pfp.jpg" class="profile-pic">
+    </div>
+
+    <div class="content">
+        <nav>  
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact-me">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="../index.html#blog" class="back-to-blog">← Back to Blog</a>
+
+        <div class="single-post">
+            <header class="post-header">
+                <h1 class="post-title">Object-Oriented Programming in Java: Spring 2024</h1>
+                <div class="post-meta">
+                    <span>Spring 2024</span>
+                    <span>•</span>
+                    <span>4 min read</span>
+                </div>
+            </header>
+
+            <article class="post-content">
+                <img src="java-code.jpg" alt="Java Code" class="post-featured-img">
+                
+                <h2>☕ My First Java Experience</h2>
+                <p>After learning C++ basics, Java introduced me to proper Object-Oriented Programming. The syntax felt familiar yet different.</p>
+                
+                <h2>🧱 The Four Pillars of OOP</h2>
+                
+                <h3>1. Encapsulation</h3>
+                <pre><code>public class Student {
+    private String name;  // Data hiding
+    private int age;
+    
+    // Getters and setters
+    public String getName() {
+        return name;
+    }
+}</code></pre>
+                
+                <h3>2. Inheritance</h3>
+                <pre><code>class Animal {
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+class Dog extends Animal {  // Dog inherits from Animal
+    void bark() {
+        System.out.println("Barking...");
+    }
+}</code></pre>
+                
+                <h3>3. Polymorphism</h3>
+                <pre><code>// Method overloading
+void print(int x) { ... }
+void print(String s) { ... }
+
+// Method overriding
+@Override
+void makeSound() {
+    System.out.println("Dog barks");
+}</code></pre>
+                
+                <h3>4. Abstraction</h3>
+                <pre><code>abstract class Shape {
+    abstract void draw();  // Abstract method
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing circle");
+    }
+}</code></pre>
+                
+                <h2>🎯 Key Projects</h2>
+                <ul>
+                    <li><strong>Bank Management System:</strong> Used classes for accounts, inheritance for account types</li>
+                    <li><strong>Library Management:</strong> Implemented interfaces for book operations</li>
+                    <li><strong>Student Database:</strong> Used ArrayLists and OOP principles</li>
+                    <li><strong>Simple GUI Calculator:</strong> First experience with Java Swing</li>
+                </ul>
+                
+                <blockquote>
+                    "Java taught me to think in objects, not just functions. It changed my approach to problem-solving."
+                </blockquote>
+                
+                <h2>🔧 Java Features I Explored</h2>
+                <ol>
+                    <li><strong>Packages:</strong> Organizing code into logical groups</li>
+                    <li><strong>Exceptions:</strong> Try-catch blocks for error handling</li>
+                    <li><strong>Collections Framework:</strong> ArrayList, HashMap, etc.</li>
+                    <li><strong>File I/O:</strong> Reading and writing files</li>
+                    <li><strong>Swing GUI:</strong> Building desktop applications</li>
+                </ol>
+                
+                <h2>💡 How OOP Helps</h2>
+                <p>OOP made my code:</p>
+                <ul>
+                    <li><strong>Modular:</strong> Easy to update and maintain</li>
+                    <li><strong>Reusable:</strong> Write once, use many times</li>
+                    <li><strong>Scalable:</strong> Easy to add new features</li>
+                    <li><strong>Organized:</strong> Clear structure and relationships</li>
+                </ul>
+                
+                <h2>🚀 From C++ to Java</h2>
+                <p>Key differences I noticed:</p>
+                <ul>
+                    <li>Java has automatic garbage collection</li>
+                    <li>Everything is an object (except primitives)</li>
+                    <li>Platform independence with JVM</li>
+                    <li>Stricter OOP implementation</li>
+                </ul>
+            </article>
+
+            <div class="blog-tags">
+                <span class="tag">Java</span>
+                <span class="tag">OOP</span>
+                <span class="tag">Programming</span>
+                <span class="tag">FAST University</span>
+                <span class="tag">Object-Oriented</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
