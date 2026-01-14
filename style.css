@@ -563,7 +563,7 @@ nav a[href*="blogspot"]:hover {
 }
 
 .blog-title {
-    font-family: 'Intel One Mono', monospace;
+    font-family: 'Intel One Mono', monospace;;
     font-size: 1.5rem;
     margin-bottom: 15px;
     line-height: 1.4;
