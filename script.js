@@ -86,3 +86,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// Function to toggle the navigation menu
+// Add to your script.js file
+function toggleMenu() {
+    const menu = document.querySelector('nav ul');
+    const hamburger = document.querySelector('.hamburger');
+    menu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}
+
+// Close menu when clicking on a link
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        const menu = document.querySelector('nav ul');
+        const hamburger = document.querySelector('.hamburger');
+        menu.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+    const menu = document.querySelector('nav ul');
+    const hamburger = document.querySelector('.hamburger');
+    const isClickInside = event.target.closest('nav');
+    
+    if (!isClickInside && menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+});
